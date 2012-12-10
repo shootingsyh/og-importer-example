@@ -1,6 +1,6 @@
 <?php
-echo('Good');
-fastcgi_finish_request();
+
+
 
 if (!$_SERVER['HTTPS'] && $_SERVER['HTTP_X_FORWARDED_PROTO'] != 'https') {
   header('WWW-Authenticate: Bearer, error=invalid_request');
@@ -37,7 +37,7 @@ $id = $_GET['id'];
 if (!$id) {
   $fbid = $_GET['fbid'];
   $data = array();
-  for ($i = 0, $i < 10; $i++) {
+  for ($i = 0; $i < 10; $i++) {
     $data[] = array ('id'=>$i, 'timestamp' => $i);
   }
   header('Content-Type: text/javascript');
@@ -50,10 +50,11 @@ if (!$id) {
     )
   );
 } else {
+  header("text/html");
   echo('<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# actionimporter: http://ogp.me/ns/fb/actionimporter#">' +
   '<meta property="fb:app_id" content="310812085693919" />' +
   '<meta property="og:type"   content="actionimporter:obj" /> ' + 
   '<meta property="og:url"    content="https://mighty-stream-5804.herokuapp.com/import/?id=' + $id +'"/> ' +
   '<meta property="og:title"  content="Sample Obj" /> ' +
-  '<meta property="og:image"  content="https://s-static.ak.fbcdn.net/images/devsite/attachment_blank.png" />')
+  '<meta property="og:image"  content="https://s-static.ak.fbcdn.net/images/devsite/attachment_blank.png" />');
 }
