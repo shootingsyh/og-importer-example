@@ -1,4 +1,4 @@
-<?php
+
 Good
 fastcgi_finish_request();
 
