@@ -1,7 +1,4 @@
 <?php
-
-
-
 if (!$_SERVER['HTTPS'] && $_SERVER['HTTP_X_FORWARDED_PROTO'] != 'https') {
   header('WWW-Authenticate: Bearer, error=invalid_request');
   die(
@@ -31,8 +28,6 @@ if ($secret !== '01b416405245af8a0ee4deec6e37ed82') {
        )
     );
 }
-echo('hello');
-fastcgi_finish_request();
 $id = $_GET['id'];
 if (!$id) {
   $fbid = $_GET['fbid'];
