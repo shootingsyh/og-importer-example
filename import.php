@@ -1,5 +1,6 @@
 <?php
-
+Good
+fastcgi_finish_request();
 
 if (!$_SERVER['HTTPS'] && $_SERVER['HTTP_X_FORWARDED_PROTO'] != 'https') {
   header('WWW-Authenticate: Bearer, error=invalid_request');
