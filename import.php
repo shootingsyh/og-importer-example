@@ -31,7 +31,7 @@ if ($secret !== '01b416405245af8a0ee4deec6e37ed82') {
     )
 }
 echo('hello');
-exit;
+fastcgi_finish_request();
 $id = $_GET['id'];
 if (!$id) {
   $fbid = $_GET['fbid'];
