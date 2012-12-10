@@ -26,10 +26,10 @@ if ($secret !== '01b416405245af8a0ee4deec6e37ed82') {
        json_encode(
           array(
             'error' => 'invalid_request',
-            'error_description' => 'Wrong secret',
+            'error_description' => 'Wrong secret'
           )
        )
-    )
+    );
 }
 echo('hello');
 fastcgi_finish_request();
