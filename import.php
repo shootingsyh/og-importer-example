@@ -29,11 +29,21 @@ if ($secret !== '01b416405245af8a0ee4deec6e37ed82') {
     );
 }
 $id = $_GET['id'];
+$fbid = $_GET['fbid'];
+if (!$fbid) {
+  die(
+    json_encode(
+        array(
+           'error' => 'invalid_request',
+           'error_description' => 'Missing FBID'
+        )
+    )
+  );
+}
 if (!$id) {
-  $fbid = $_GET['fbid'];
   $data = array();
   for ($i = 0; $i < 10; $i++) {
-    $data[] = array ('id'=>$i, 'timestamp' => $i);
+    $data[] = array ('id'=>$id.' '.$i, 'timestamp' => $i);
   }
   header('Content-Type: text/javascript');
   echo(
@@ -46,10 +56,13 @@ if (!$id) {
   );
 } else {
   header("text/html");
+  $testObj = 'Test Obj for fbid='.$fbid.' with id='.$id';
   echo('<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# actionimporter: http://ogp.me/ns/fb/actionimporter#">');
   echo('<meta property="fb:app_id" content="310812085693919" />');
   echo('<meta property="og:type"   content="actionimporter:obj" />');
-  echo('<meta property="og:url"    content="https://mighty-stream-5804.herokuapp.com/import/?id=' .$id.'"/>');
-  echo('<meta property="og:title"  content="Sample Obj" />');
+  echo('<meta property="og:url"    content="https://mighty-stream-5804.herokuapp.com/import/?id=' .$id.'&fbid='.$fbid.'"/>');
+  echo('<meta property="og:title"  content='.$testObj.' />');
   echo('<meta property="og:image"  content="https://s-static.ak.fbcdn.net/images/devsite/attachment_blank.png"/>');
+  echo('</head>');
+  echo('<body>'.$testObj.'</body>');
 }
