@@ -58,7 +58,7 @@ if (!$id) {
 } else {
   $file = fopen('resource.txt', 'r');
   $str = fread($file, filesize($file));
-  if ($str === FALSE) {
+  if ($file === FALSE) {
     die(json_encode(array(
       'error' => 'fail read')));
   }
