@@ -16,7 +16,7 @@ if (!$obj_id) {
   echo('<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# actionimporter: http://ogp.me/ns/fb/actionimporter#">');
   echo('<meta property="fb:app_id" content="310812085693919" />');
   echo('<meta property="og:type"   content="actionimporter:obj" />');
-  echo('<meta property="og:url"    content="https://mighty-stream-5804.herokuapp.com/import/?obj_id=' .$obj_id.'&fbid='.$fbid.'"/>');
+  echo('<meta property="og:url"    content="https://mighty-stream-5804.herokuapp.com/import?obj_id=' .$obj_id.'&fbid='.$fbid.'"/>');
   echo('<meta property="og:title"  content="'.$testObj.'" />');
   echo('<meta property="og:image"  content="https://s-static.ak.fbcdn.net/images/devsite/attachment_blank.png"/>');
   echo('</head>');
