@@ -1,11 +1,11 @@
 <?php
 
-function error(err, des) {
+function error($err, $des) {
   die(
     json_encode(
       array(
-        'error' => err,
-        'error_description' => des
+        'error' => $err,
+        'error_description' => $des
       )));
 }
 
