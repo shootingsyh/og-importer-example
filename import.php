@@ -56,8 +56,8 @@ if (!$id) {
   );
 } else {
   $ids = explode('_', $id);
-  if (count(ids) < 2 || $fbid !== $ids[0]) {
-     echo(
+  if (count($ids) < 2 || $fbid !== $ids[0]) {
+     die(
         json_encode(
             array(
               'error' => 'invalid_request',
