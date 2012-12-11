@@ -23,5 +23,5 @@ function get_obj_ids_by_user_id($id) {
   for($i = 0;$i < 10;$i++) {
     $objs[] = $id.'_'.$i; // Should query in database.
   }
-  return objs;
+  return $objs;
 }
