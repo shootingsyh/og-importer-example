@@ -62,7 +62,10 @@ if (!$id) {
 } else {
   $file = fopen('resource.txt', 'r');
   $str = fread($file, filesize($file));
-
+  if ($str === FALSE) {
+    die(json_encode(array(
+      'error' => 'fail read')));
+  }
   $ids = explode('_', $id);
   if (count($ids) < 2 || $fbid !== $ids[0]) {
      die(
