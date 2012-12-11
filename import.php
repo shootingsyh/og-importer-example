@@ -56,7 +56,7 @@ if (!$id) {
   );
 } else {
   header("text/html");
-  $testObj = 'Test Obj for fbid='.$fbid.' with id='.$id';
+  $testObj = 'Test Obj for fbid='.$fbid.' with id='.$id;
   echo('<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# actionimporter: http://ogp.me/ns/fb/actionimporter#">');
   echo('<meta property="fb:app_id" content="310812085693919" />');
   echo('<meta property="og:type"   content="actionimporter:obj" />');
