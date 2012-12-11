@@ -1,7 +1,7 @@
 <?php
 require_once('util.php');
-check_request();
-$fbid = $_GET['fbid'];
+$request = check_request();
+$fbid = $request['user_id'];
 for ($i = 0; $i < 10; $i++) {
   $data[] = array ('id'=>$fbid.'_'.$i, 'timestamp' => $i);
 }
