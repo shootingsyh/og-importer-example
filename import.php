@@ -55,6 +55,17 @@ if (!$id) {
     )
   );
 } else {
+  $ids = explode('_', $id);
+  if (count(ids) < 2 || $fbid !== $ids[0]) {
+     echo(
+        json_encode(
+            array(
+              'error' => 'invalid_request',
+              'error_description' => 'Invalid id for fbid '.$fbid
+            )
+        )
+     );
+  }
   header("text/html");
   $testObj = 'Test Obj for fbid='.$fbid.' with id='.$id;
   echo('<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# actionimporter: http://ogp.me/ns/fb/actionimporter#">');
