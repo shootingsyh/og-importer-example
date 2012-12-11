@@ -40,10 +40,6 @@ if (!$fbid) {
     )
   );
 }
-$file = fopen('resource.txt', 'a');
-if(!file) { die(json_encode(array('error'=>'not create file'))); }
-fwrite($file, "haha");
-fclose($file);
 
 if (!$id) {
   $data = array();
