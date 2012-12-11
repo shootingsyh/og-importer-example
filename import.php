@@ -1,9 +1,9 @@
 <?php
 require_once('util.php');
 require_once('database.php');
-$unsigned_request = check_request();
-$obj_id = $unsigned_request['obj_id'];
-$fbid = $unsigned_request['user_id'];
+$request = check_request();
+$obj_id = $request['obj_id'];
+$fbid = $request['user_id'];
 if (!$obj_id) {
   error('invalid_request', 'invalid obj id');
 } else {
