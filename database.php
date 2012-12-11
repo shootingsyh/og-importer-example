@@ -18,7 +18,7 @@ function check_obj_id($user_id, $obj_id) {
   return true;
 }
 
-function get_obj_ids_by_user_id($id, $count) {
+function get_obj_ids_by_user_id($id) {
   $objs = array();
   for($i = 0;$i < 10;$i++) {
     $objs[] = $id.'_'.$i; // Should query in database.
