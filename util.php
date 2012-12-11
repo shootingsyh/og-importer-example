@@ -17,7 +17,14 @@ function base64_url_decode($input) {
     return base64_decode(strtr($input, '-_,', '+/='));
 }
 
-function check_request() {
+function check_public_request() {
+  if (!$_SERVER['HTTPS'] && $_SERVER['HTTP_X_FORWARDED_PROTO'] != 'https') {
+    header('WWW-Authenticate: Bearer, error=invalid_request');
+    error('invalid_request', 'You must use https://');
+  }
+}
+
+function check_feed_request() {
   if (!$_SERVER['HTTPS'] && $_SERVER['HTTP_X_FORWARDED_PROTO'] != 'https') {
     header('WWW-Authenticate: Bearer, error=invalid_request');
     error('invalid_request', 'You must use https://');
