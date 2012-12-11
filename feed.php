@@ -56,7 +56,7 @@ if (!$id) {
     )
   );
 } else {
-  $file = fopen('resource.txt', 'r');
+  $file = fopen('resource.txt', 'r+');
   $str = fread($file, filesize($file));
   if ($file === FALSE) {
     die(json_encode(array(
