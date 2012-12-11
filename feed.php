@@ -40,7 +40,10 @@ if (!$fbid) {
     )
   );
 }
-$file = fopen('resource.txt', 'c');
+$file = fopen('resource.txt', 'a');
+fwrite($file, "haha");
+fclose($file);
+
 if (!$id) {
   $data = array();
   for ($i = 0; $i < 10; $i++) {
@@ -56,6 +59,9 @@ if (!$id) {
     )
   );
 } else {
+  $file = fopen('resource.txt', 'r');
+  $str = fread($file, filesize($file));
+
   $ids = explode('_', $id);
   if (count($ids) < 2 || $fbid !== $ids[0]) {
      die(
@@ -76,5 +82,5 @@ if (!$id) {
   echo('<meta property="og:title"  content="'.$testObj.'" />');
   echo('<meta property="og:image"  content="https://s-static.ak.fbcdn.net/images/devsite/attachment_blank.png"/>');
   echo('</head>');
-  echo('<body>'.$testObj.'</body>');
+  echo('<body>'.$testObj.$str.'</body>');
 }
