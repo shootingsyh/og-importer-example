@@ -1,5 +1,6 @@
 <?php
 require_once('util.php');
+require_once('database.php');
 $request = check_feed_request();
 $fbid = $request['user_id']; // user_id in request is fbid.
 $id = get_user_id_by_fbid($fbid); // retriece app's user id from fbid.
