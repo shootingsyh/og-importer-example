@@ -43,7 +43,7 @@ if (!$fbid) {
 if (!$id) {
   $data = array();
   for ($i = 0; $i < 10; $i++) {
-    $data[] = array ('id'=>$id.' '.$i, 'timestamp' => $i);
+    $data[] = array ('id'=>$fbid.'_'.$i, 'timestamp' => $i);
   }
   header('Content-Type: text/javascript');
   echo(
