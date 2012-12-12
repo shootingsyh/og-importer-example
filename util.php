@@ -1,5 +1,13 @@
 <?php
 
+function getSecret() {
+  return '01b416405245af8a0ee4deec6e37ed82';
+}
+
+function getAppID() {
+  return 310812085693919;
+}
+
 function error($err, $des) {
   die(
     json_encode(
@@ -29,7 +37,7 @@ function check_feed_request() {
     header('WWW-Authenticate: Bearer, error=invalid_request');
     error('invalid_request', 'You must use https://');
   }
-  $secret = '01b416405245af8a0ee4deec6e37ed82';
+  $secret = getSecret();
   $signed_request = $_GET['signed_request'];
 
   if(!$signed_request) {
