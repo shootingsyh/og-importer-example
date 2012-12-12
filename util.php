@@ -1,4 +1,15 @@
 <?php
+public function getUrl($path = '/') {
+  if (isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] == 'on' || $_SERVER['HTTPS'] == 1)
+    || isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'http
+  ) {
+    $protocol = 'https://';
+  }
+  else {
+    $protocol = 'http://';
+  }
+  return $protocol . $_SERVER['HTTP_HOST'] . $path;
+}
 
 function getSecret() {
   return '01b416405245af8a0ee4deec6e37ed82';
