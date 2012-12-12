@@ -5,11 +5,11 @@ check_public_request();
 $obj_id = $_GET['obj_id'];
 $fbid = $_GET['user_id'];
 if (!$obj_id) {
-  error('invalid_request', 'invalid obj id');
+  error('invalid_request', 'missing obj id');
 } else {
   $user_id = get_user_id_by_fbid($fbid);
   if(!check_obj_id($user_id, $obj_id)) {
-     error('invalid_request', 'invalid obj id');
+     error('invalid_request', 'invalid obj id '.$obj_id.'. Expecting '.$user_id.'_something');
   }
   header("text/html");
   $testObj = 'Test Obj for fbid='.$fbid.' with obj_id='.$obj_id;
