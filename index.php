@@ -1,6 +1,6 @@
 <?php
 require_once('util.php');
-
+require_once('database.php');
 check_public_request();
 
 
