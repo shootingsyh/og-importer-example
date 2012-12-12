@@ -1,7 +1,7 @@
 <?php
 // Fake database implementation. Should connect to real database.
 function create_user_if_not_exist($fbid)  {
-  $user_id = "fake user id"; // Should create user in database.
+  $user_id = $fbid; // Should create user in database.
   return $user_id;
 }
 

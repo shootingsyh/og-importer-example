@@ -22,8 +22,11 @@ $facebook = new Facebook(array(
   'trustForwarded' => true,
 ));
 
-$user_id = $facebook->getUser();
-if ($user_id) {
+$fbid = $facebook->getUser();
+if ($fbid) {
+  // Create user account after login if not exist
+  $user_id = create_user_if_not_exist($fbid); 
+  
   try {
     // Fetch the viewer's basic information
     $basic = $facebook->api('/me');
@@ -179,7 +182,7 @@ $app_name = idx($app_info, 'name', '');
 
     <header class="clearfix">
       <?php if (isset($basic)) { ?>
-      <p id="picture" style="background-image: url(https://graph.facebook.com/<?php echo he($user_id); ?>/picture?type=normal)"></p>
+      <p id="picture" style="background-image: url(https://graph.facebook.com/<?php echo he($fbid); ?>/picture?type=normal)"></p>
 
       <div>
         <h1>Welcome, <strong><?php echo he(idx($basic, 'name')); ?></strong></h1>
@@ -223,7 +226,7 @@ $app_name = idx($app_info, 'name', '');
     </section>
 
     <?php
-      if ($user_id) {
+      if ($fbid) {
     ?>
 
     <section id="samples" class="clearfix">
