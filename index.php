@@ -255,5 +255,8 @@ $app_name = idx($app_info, 'name', '');
         </ul>
       </div>
     </section>
+    <?php 
+     }
+    <?>
   </body>
 </html>
