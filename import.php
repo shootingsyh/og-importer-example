@@ -17,8 +17,10 @@ if (!$obj_id) {
   echo('<meta property="fb:app_id" content="310812085693919" />');
   echo('<meta property="og:type"   content="actionimporter:city" />');
   echo('<meta property="og:url"    content="'.getUrl('/import?obj_id='.$obj_id.'&user_id='.$fbid).'"/>');
-  echo('<meta property="og:title"  content="'.$testObj.'" />');
+  echo('<meta property="og:title"  content="'.get_name_by_obj_id($obj_id).'" />');
   echo('<meta property="og:image"  content="'.get_image_by_obj_id($obj_id).'"/>');
   echo('</head>');
-  echo('<body>'.$testObj.'</body>');
+  echo('<body>'.$testObj.
+          '<ima url="'.get_image_by_obj_id($obj_id).'"/>'.
+       '</body>');
 }
