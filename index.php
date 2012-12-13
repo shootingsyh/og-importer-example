@@ -223,7 +223,6 @@ $app_name = idx($app_info, 'name', '');
               // Extract the pieces of info we need from the requests above
               $image = get_image_by_obj_id($obj);
               $name = get_name_by_obj_id($obj);
-              echo he($name);echo($name);
           ?>
           <li>
             <a href="<?php echo he($image); ?>" target="_top">

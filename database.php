@@ -40,10 +40,10 @@ function get_image_by_obj_id($obj_id) {
   return getUrl('/images/city_'.$count.'.jpeg');
 }
 
-$city_mapping = array('beijing', 'shanghai', 'seattle', 'dublin', 'menlopark');
 
 function get_name_by_obj_id($obj_id) {
-  $count = get_count_by_obj_id($obj_id);
+ static $city_mapping = array('beijing', 'shanghai', 'seattle', 'dublin', 'menlopark');
+ $count = get_count_by_obj_id($obj_id);
   if ($count > 4) { 
     return 'Forgotten Realm';
   }
