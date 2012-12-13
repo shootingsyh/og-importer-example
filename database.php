@@ -45,7 +45,7 @@ $city_mapping = array('beijing', 'shanghai', 'seattle', 'dublin', 'menlopark');
 function get_name_by_obj_id($obj_id) {
   $count = get_count_by_obj_id($obj_id);
   if ($count > 4) { 
-    return 'Forgotten Realm'
+    return 'Forgotten Realm';
   }
   return $city_mapping[$count];
 }
