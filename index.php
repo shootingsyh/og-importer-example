@@ -38,24 +38,6 @@ if ($fbid) {
       exit();
     }
   }
-
-  // This fetches some things that you like . 'limit=*" only returns * values.
-  // To see the format of the data you are retrieving, use the "Graph API
-  // Explorer" which is at https://developers.facebook.com/tools/explorer/
-  $likes = idx($facebook->api('/me/likes?limit=4'), 'data', array());
-
-  // This fetches 4 of your friends.
-  $friends = idx($facebook->api('/me/friends?limit=4'), 'data', array());
-
-  // And this returns 16 of your photos.
-  $photos = idx($facebook->api('/me/photos?limit=16'), 'data', array());
-
-  // Here is an example of a FQL call that fetches all of your friends that are
-  // using this app
-  $app_using_friends = $facebook->api(array(
-    'method' => 'fql.query',
-    'query' => 'SELECT uid, name FROM user WHERE uid IN(SELECT uid2 FROM friend WHERE uid1 = me()) AND is_app_user = 1'
-  ));
 }
 
 // Fetch the basic info of the app that they are using
@@ -230,7 +212,6 @@ $app_name = idx($app_info, 'name', '');
 
     <section id="samples" class="clearfix">
       <h1>The city you flew to</h1>
-
       <div class="list">
         <h3>The cities</h3>
         <ul class="friends">  
@@ -242,6 +223,7 @@ $app_name = idx($app_info, 'name', '');
               // Extract the pieces of info we need from the requests above
               $image = get_image_by_obj_id($obj);
               $name = get_name_by_obj_id($obj);
+              echo he($name);echo($name);
           ?>
           <li>
             <a href="<?php echo he($image); ?>" target="_top">
