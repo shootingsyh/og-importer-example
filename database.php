@@ -28,7 +28,8 @@ function get_obj_ids_by_user_id($id) {
 }
 
 function get_count_by_obj_id($obj_id) {
-  return explode('_', $obj_id)[1];
+  $exp = explode('_', $obj_id);
+  return $exp[1];
 }
 
 function get_image_by_obj_id($obj_id) {
