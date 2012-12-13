@@ -12,13 +12,13 @@ if (!$obj_id) {
      error('invalid_request', 'invalid obj id '.$obj_id.'. Expecting '.$user_id.'_something');
   }
   header("text/html");
-  $testObj = 'Test Obj for fbid='.$fbid.' with obj_id='.$obj_id;
+  $testObj = get_name_by_obj_id($obj_id).' city for fbid='.$fbid.' with obj_id='.$obj_id;
   echo('<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# actionimporter: http://ogp.me/ns/fb/actionimporter#">');
   echo('<meta property="fb:app_id" content="310812085693919" />');
-  echo('<meta property="og:type"   content="actionimporter:obj" />');
+  echo('<meta property="og:type"   content="actionimporter:city" />');
   echo('<meta property="og:url"    content="'.getUrl('/import?obj_id='.$obj_id.'&user_id='.$fbid).'"/>');
   echo('<meta property="og:title"  content="'.$testObj.'" />');
-  echo('<meta property="og:image"  content="'.getUrl('/images/sample'.rand(1,5).'.gif').'"/>');
+  echo('<meta property="og:image"  content="'.get_image_by_obj_id($obj_id).'"/>');
   echo('</head>');
   echo('<body>'.$testObj.'</body>');
 }
