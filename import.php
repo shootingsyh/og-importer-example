@@ -21,6 +21,6 @@ if (!$obj_id) {
   echo('<meta property="og:image"  content="'.get_image_by_obj_id($obj_id).'"/>');
   echo('</head>');
   echo('<body>'.$testObj.
-          '<img src="'.get_image_by_obj_id($obj_id).'" />'.
+          '<br/><img src="'.get_image_by_obj_id($obj_id).'" />'.
        '</body>');
 }
