@@ -47,5 +47,5 @@ function get_name_by_obj_id($obj_id) {
   if ($count > 4) { 
     return 'Forgotten Realm';
   }
-  return $city_mapping[$count];
+  return $city_mapping[intval($count)];
 }
