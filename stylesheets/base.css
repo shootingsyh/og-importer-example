@@ -157,107 +157,9 @@ header .tagline {
 }
 /* ------------------------------------------ */
 
-/* =get started
---------------------------------------------- */
-#get-started {
-  background: url("../images/get-started-bg.jpg");
-  border: 1px solid #353d4f;
-  height: 105px;
-  text-align: center;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, .29);
-  padding: 32px 0 0;
-}
-
-#get-started p {
-  color: #fff;
-  font-family: "CorbelRegular";
-  font-size: 24px;
-  height: 23px;
-  margin-bottom: 24px;
-}
-
-#get-started p span {
-  font-family: "HybreaRegular";
-  font-size: 22px;
-}
-/* ------------------------------------------ */
-
-/* =guides/samples spacing
---------------------------------------------- */
-#guides h1,
-#samples h1 {
-  margin-bottom: 15px;
-  text-align: center;
-}
-
-#guides, #samples {
-  padding: 20px 5px 20px 10px;
-}
-
-#guides ul li,
-#samples .list {
-  float: left;
-  margin-right: 3px;
-  width: 172px;
-}
-
-#guides ul li p,
-#samples ul {
-  padding: 0 4px;
-}
-/* ------------------------------------------ */
-
-/* =guides
---------------------------------------------- */
-#guides {
-  border-bottom: 1px solid #b3b3b3;
-  border-left: 1px solid #b3b3b3;
-  border-right: 1px solid #b3b3b3;
-}
-
-#guides ul li {
-  font-size: 11px;
-  list-style: none;
-}
-
-#guides ul li p {
-  -moz-hyphens: auto;
-  -webkit-hyphens: auto;
-  line-height: 20px;
-  text-align: justify;
-}
-
-#guides ul li a.icon {
-  background: url("../images/sprites.png") no-repeat;
-  display: block;
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  font-size: 14px;
-  margin-bottom: 10px;
-  padding-top: 124px;
-  text-align: center;
-}
-
-#guides ul li a.websites {
-  background-position: 35px -87px;
-}
-
-#guides ul li a.mobile-apps {
-  background-position: 35px -231px;
-}
-
-#guides ul li a.apps-on-facebook {
-  background-position: 35px -375px;
-}
-
-#guides ul li a.heroku {
-  background-position: 35px -519px;
-}
-/* ------------------------------------------ */
-
 /* =samples
 --------------------------------------------- */
 #samples {
-  background-image: url("../images/samples-bg.png");
   border-bottom: 1px solid #dadada;
   border-left: 1px solid #b3b3b3;
   border-right: 1px solid #b3b3b3;
@@ -265,18 +167,16 @@ header .tagline {
 }
 
 #samples h3 {
-  background: url("../images/header-sketch.png") no-repeat;
   color: #646464;
   font-weight: bold;
-  font-size: 11px;
+  font-size: 30px;
   line-height: 29px;
   text-align: center;
 }
 
 #samples ul {
-  background: url("../images/picture-sketch.png") 4px 8px;
   background-repeat: repeat-y;
-  height: 161px;
+  height: 200px;
   overflow: hidden;
   padding-top: 8px;
 }
@@ -286,9 +186,9 @@ header .tagline {
   background-position: 0 0;
   color: #7c7c7c;
   display: block;
-  font-size: 11px;
+  font-size: 20px;
   font-weight: bold;
-  height: 32px;
+  height: 64px;
   margin-bottom: 11px;
   overflow: hidden;
   position: relative;
@@ -298,8 +198,8 @@ header .tagline {
 #samples li a:visited {
   color: #7c7c7c;
   display: block;
-  line-height: 32px;
-  padding-left: 36px;
+  line-height: 64px;
+  padding-left: 68px;
 }
 
 #samples .list img {
@@ -307,7 +207,7 @@ header .tagline {
   left: 0;
   position: absolute;
   top: 0;
-  width: 32px;
+  width: 64px;
 }
 
 #samples .inline ul {
