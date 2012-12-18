@@ -109,7 +109,6 @@ $app_name = idx($app_info, 'name', '');
         <?php
            $user_id = get_user_id_by_fbid($fbid); 
         ?>
-        var name = $("#publish").
         FB.api('https://graph.facebook.com/me/actionimporter:fly',
                'post',
                { city: '<?php getUrl("/import/user_id=".$user_id."&obj_id=".$user_id) ?>'+ $('#city').val(), 'fb:explicitly_shared': 1},
@@ -120,7 +119,8 @@ $app_name = idx($app_info, 'name', '');
                    }
                  }
                }
-      });
+         )
+       });
     </script>
 
     <header class="clearfix">
