@@ -34,10 +34,10 @@ function get_count_by_obj_id($obj_id) {
 
 function get_image_by_obj_id($obj_id) {
   $count = get_count_by_obj_id($obj_id);
-  if (($count > 4) || !is_int($count)) {
+  if (($count > 4) || !is_numeric($count) || ($count<0)) {
     return getUrl('/images/city_forgotten.jpeg');
   }
-  return getUrl('/images/city_'.$count.'.jpeg');
+  return getUrl('/images/city_'.intval($count).'.jpeg');
 }
 
 function get_obj_url_by_user_obj_id($user_id, $obj_id) {
@@ -48,10 +48,10 @@ function get_obj_url_by_user_obj_id($user_id, $obj_id) {
 function get_name_by_obj_id($obj_id) {
  static $city_mapping = array('beijing', 'shanghai', 'seattle', 'dublin', 'menlopark');
  $count = get_count_by_obj_id($obj_id);
-  if (!is_int($count)) {
+  if (!is_numeric($count)) {
     return $count;
   }
-  if ($count > 4) { 
+  if (($count > 4) || ($count < 0)) { 
     return 'Forgotten Realm';
   }
   return $city_mapping[intval($count)];
