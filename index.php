@@ -145,7 +145,7 @@ $app_name = idx($app_info, 'name', '');
     <?php
       if ($fbid) {
     ?>
-    <section id="fly" class="clearfix">
+    <section id="fly" class="clearfix" style="padding:5px">
       <h1>Submit your flight</h1>
       <div>
          <form>
