@@ -160,6 +160,8 @@ header .tagline {
 #fly {
   border-right: 1px solid #b3b3b3;
   border-left: 1px solid #b3b3b3;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
 }
 
 
