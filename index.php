@@ -105,7 +105,7 @@ $app_name = idx($app_info, 'name', '');
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
 
-      $("#publish").button().click(function(event) {
+      $("#publish").click(function(event) {
         <?php
            $user_id = get_user_id_by_fbid($fbid); 
         ?>
