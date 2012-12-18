@@ -104,6 +104,16 @@ $app_name = idx($app_info, 'name', '');
         js.src = "//connect.facebook.net/en_US/all.js";
         fjs.parentNode.insertBefore(js, fjs);
       }(document, 'script', 'facebook-jssdk'));
+
+      $("#publish").button().click(function(event) {
+        <%
+           $user_id = get_user_id_by_fbid($fbid); 
+        %>
+        var name = $("#publish").
+        FB.api('https://graph.facebook.com/me/actionimporter:fly',
+               'post',
+               { city: '<% getUrl("/import/user_id=".$user_id."&obj_id=".$user_id) %>'+ $('#city').val()}
+      });
     </script>
 
     <header class="clearfix">
@@ -129,7 +139,16 @@ $app_name = idx($app_info, 'name', '');
     <?php
       if ($fbid) {
     ?>
-
+    <section id="fly" class="clearfix">
+      <h1>Submit your flight</h1>
+      <div>
+         <form>
+            <label>Fly to </label>
+            <input type="text" id="city" />
+            <input type="publish" id="publish" />
+         </form>
+      </div>
+    </section>
     <section id="samples" class="clearfix">
       <h1>The city you flew to</h1>
       <div class="list">
