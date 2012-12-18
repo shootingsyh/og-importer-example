@@ -106,13 +106,13 @@ $app_name = idx($app_info, 'name', '');
       }(document, 'script', 'facebook-jssdk'));
 
       $("#publish").button().click(function(event) {
-        <%
+        <?php
            $user_id = get_user_id_by_fbid($fbid); 
-        %>
+        ?>
         var name = $("#publish").
         FB.api('https://graph.facebook.com/me/actionimporter:fly',
                'post',
-               { city: '<% getUrl("/import/user_id=".$user_id."&obj_id=".$user_id) %>'+ $('#city').val(), 'fb:explicitly_shared': 1},
+               { city: '<?php getUrl("/import/user_id=".$user_id."&obj_id=".$user_id) ?>'+ $('#city').val(), 'fb:explicitly_shared': 1},
                function (response) {
                  if (response != null) {
                    if (console && console.log) {
