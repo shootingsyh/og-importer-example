@@ -137,7 +137,7 @@ $app_name = idx($app_info, 'name', '');
         <ul class="friends">  
           <?php
             $user_id = get_user_id_by_fbid($fbid);
-            $obj_ids = get_obj_ids_by_user_id($id);
+            $obj_ids = get_obj_ids_by_user_id($user_id);
             $data = array();
             foreach ($obj_ids as $obj) {
               // Extract the pieces of info we need from the requests above
