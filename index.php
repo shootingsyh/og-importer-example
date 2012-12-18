@@ -152,7 +152,7 @@ $app_name = idx($app_info, 'name', '');
          <form>
             <label>Fly to </label>
             <input type="text" id="city" />
-            <input type="publish" id="publish" />
+            <input type="button" id="publish" />
          </form>
       </div>
     </section>
