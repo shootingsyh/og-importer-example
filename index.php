@@ -143,9 +143,10 @@ $app_name = idx($app_info, 'name', '');
               // Extract the pieces of info we need from the requests above
               $image = get_image_by_obj_id($obj);
               $name = get_name_by_obj_id($obj);
+              $obj_url = get_obj_url_by_user_obj_id($user_id, $obj);
           ?>
           <li>
-            <a href="<?php echo he($image); ?>" target="_top">
+            <a href="<?php echo he($obj_url); ?>" target="_top">
               <img src="<?php echo he($image); ?>" alt="<?php echo he($name); ?>">
               <?php echo he($name); ?>
             </a>

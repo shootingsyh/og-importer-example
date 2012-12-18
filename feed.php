@@ -8,8 +8,7 @@ $obj_ids = get_obj_ids_by_user_id($id);
 $data = array();
 $i = 0;
 foreach ($obj_ids as $obj_id) {
-  $data[] = array ('object'=>'https://mighty-stream-5804.herokuapp.com/import?obj_id='
-                          .$obj_id.'&user_id='.$fbid,
+  $data[] = array ('object'=> get_obj_url_by_user_obj_id($user_id, $obj_id)
                    'timestamp'=>$i);
   $i++;
 }

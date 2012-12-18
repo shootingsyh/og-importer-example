@@ -40,6 +40,10 @@ function get_image_by_obj_id($obj_id) {
   return getUrl('/images/city_'.$count.'.jpeg');
 }
 
+function get_obj_url_by_user_obj_id($user_id, $obj_id) {
+  return 'https://mighty-stream-5804.herokuapp.com/import?obj_id='
+                          .$obj_id.'&user_id='.$fbid
+}
 
 function get_name_by_obj_id($obj_id) {
  static $city_mapping = array('beijing', 'shanghai', 'seattle', 'dublin', 'menlopark');
