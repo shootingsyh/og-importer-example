@@ -92,22 +92,9 @@ $app_name = idx($app_info, 'name', '');
           // user asking if they want to send data again.
           window.location = window.location;
         });
-
-        FB.Canvas.setAutoGrow();
-      };
-
-      // Load the SDK Asynchronously
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/all.js";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-
       $("#publish").click(function(event) {
         <?php
-           $user_id = get_user_id_by_fbid($fbid); 
+           $user_id = get_user_id_by_fbid($fbid);
         ?>
         FB.api('https://graph.facebook.com/me/actionimporter:fly',
                'post',
@@ -121,6 +108,18 @@ $app_name = idx($app_info, 'name', '');
                }
          )
        });
+        FB.Canvas.setAutoGrow();
+      };
+
+      // Load the SDK Asynchronously
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+
     </script>
 
     <header class="clearfix">
