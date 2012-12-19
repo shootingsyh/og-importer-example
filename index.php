@@ -98,7 +98,7 @@ $app_name = idx($app_info, 'name', '');
         ?>
         FB.api('https://graph.facebook.com/me/actionimporter:fly',
                'post',
-               { city: '<?php echo getUrl("/import?user_id=".$user_id."&obj_id=".$user_id) ?>'+ '_' + $('#city').val(), 'fb:explicitly_shared': 1},
+               { city: '<?php echo getUrl("/import?user_id=".$user_id."&obj_id=".$user_id) ?>'+ '_' + $('#cities').val(), 'fb:explicitly_shared': 1},
                function (response) {
                  if (response != null) {
                    if (console && console.log) {
@@ -150,7 +150,16 @@ $app_name = idx($app_info, 'name', '');
       <div>
          <form>
             <label>Fly to </label>
-            <input type="text" id="city" />
+            <select name="cities" id="cities" size="1">
+            <?php 
+               $user_id = get_user_id_by_fbid($fbid);
+               $obj_ids = get_obj_ids_by_user_id($user_id);
+               foreach($obj_ids as $obj) {
+                 echo '<option value="'.$obj.'">'.get_name_by_obj_id($obj)
+                      .'</option>';
+               }
+            ?>
+            </select>
             <input type="button" id="publish" value="submit" />
          </form>
       </div>
@@ -161,8 +170,6 @@ $app_name = idx($app_info, 'name', '');
         <h3>The cities</h3>
         <ul class="friends">  
           <?php
-            $user_id = get_user_id_by_fbid($fbid);
-            $obj_ids = get_obj_ids_by_user_id($user_id);
             $data = array();
             foreach ($obj_ids as $obj) {
               // Extract the pieces of info we need from the requests above
