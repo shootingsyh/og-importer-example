@@ -167,7 +167,6 @@ $app_name = idx($app_info, 'name', '');
     <section id="samples" class="clearfix">
       <h1>The city you flew to</h1>
       <div class="list">
-        <h3>The cities</h3>
         <ul class="friends">  
           <?php
             $data = array();
