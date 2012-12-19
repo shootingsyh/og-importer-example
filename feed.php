@@ -9,7 +9,7 @@ $data = array();
 $i = 0;
 foreach ($obj_ids as $obj_id) {
   $data[] = array ('city'=> get_obj_url_by_user_obj_id($id, $obj_id),
-                   'timestamp'=>$i+time());
+                   'start_time'=>$i+time());
   $i++;
 }
 
