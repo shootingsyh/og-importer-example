@@ -103,6 +103,9 @@ $app_name = idx($app_info, 'name', '');
                  if (response != null) {
                    if (console && console.log) {
                      console.log('The response was', response);
+                     if (response.id) {
+                       alert("publish the object with id "+response.id);
+                     }
                    }
                  }
                }
