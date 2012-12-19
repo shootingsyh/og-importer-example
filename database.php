@@ -12,24 +12,20 @@ function get_user_id_by_fbid($fbid) {
 }
 
 function check_obj_id($user_id, $obj_id) {
-  $exps = explode('_', $obj_id);
-  if (count($exps) < 2 || $exps[0] !== $user_id) {
-    return false;
-  } 
+  //should verify in database
   return true;
 }
 
 function get_obj_ids_by_user_id($id) {
   $objs = array();
   for($i = 0;$i < 6;$i++) {
-    $objs[] = $id.'_'.$i; // Should query in database.
+    $objs[] = $i; // Should query in database.
   }
   return $objs;
 }
 
 function get_count_by_obj_id($obj_id) {
-  $exp = explode('_', $obj_id);
-  return $exp[1];
+  return $obj_id;
 }
 
 function get_image_by_obj_id($obj_id) {
@@ -41,8 +37,9 @@ function get_image_by_obj_id($obj_id) {
 }
 
 function get_obj_url_by_user_obj_id($user_id, $obj_id) {
+  // should verify user first.
   return 'https://mighty-stream-5804.herokuapp.com/city?obj_id='
-                          .$obj_id.'&user_id='.$user_id;
+                          .$obj_id;
 }
 
 function get_name_by_obj_id($obj_id) {

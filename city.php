@@ -16,7 +16,7 @@ if (!$obj_id) {
   echo('<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# actionimporter: http://ogp.me/ns/fb/actionimporter#">');
   echo('<meta property="fb:app_id" content="310812085693919" />');
   echo('<meta property="og:type"   content="actionimporter:city" />');
-  echo('<meta property="og:url"    content="'.getUrl('/city?obj_id='.$obj_id.'&user_id='.$fbid).'"/>');
+  echo('<meta property="og:url"    content="'.getUrl('/city?obj_id='.$obj_id).'"/>');
   echo('<meta property="og:title"  content="'.get_name_by_obj_id($obj_id).'" />');
   echo('<meta property="og:image"  content="'.get_image_by_obj_id($obj_id).'"/>');
   echo('</head>');
