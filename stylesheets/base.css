@@ -209,11 +209,11 @@ header .tagline {
   color: #7c7c7c;
   display: block;
   line-height: 64px;
-  padding-left: 68px;
+  padding-left: 84px;
 }
 
 #samples .list img {
-  height: auto;
+  height: 60px;
   left: 0;
   position: absolute;
   top: 0;
