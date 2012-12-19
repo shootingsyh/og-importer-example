@@ -21,7 +21,7 @@ function check_obj_id($user_id, $obj_id) {
 
 function get_obj_ids_by_user_id($id) {
   $objs = array();
-  for($i = 0;$i < 5;$i++) {
+  for($i = 0;$i < 6;$i++) {
     $objs[] = $id.'_'.$i; // Should query in database.
   }
   return $objs;
