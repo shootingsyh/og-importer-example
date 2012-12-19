@@ -168,7 +168,7 @@ $app_name = idx($app_info, 'name', '');
       </div>
     </section>
     <section id="samples" class="clearfix">
-      <h1>The city you flew to</h1>
+      <h1>The city you flew to: </h1>
       <div class="list">
         <ul class="friends">  
           <?php
