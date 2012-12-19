@@ -8,8 +8,8 @@ $obj_ids = get_obj_ids_by_user_id($id);
 $data = array();
 $i = 0;
 foreach ($obj_ids as $obj_id) {
-  $data[] = array ('object'=> get_obj_url_by_user_obj_id($id, $obj_id),
-                   'timestamp'=>$i);
+  $data[] = array ('city'=> get_obj_url_by_user_obj_id($id, $obj_id),
+                   'timestamp'=>$i+time());
   $i++;
 }
 
@@ -18,7 +18,7 @@ echo(
   json_encode(
     array(
       'meta' => array('code'=>200),
-      'data' => $data,
+      'fly' => $data,
     )
   )
 );

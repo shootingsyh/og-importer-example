@@ -41,7 +41,7 @@ function get_image_by_obj_id($obj_id) {
 }
 
 function get_obj_url_by_user_obj_id($user_id, $obj_id) {
-  return 'https://mighty-stream-5804.herokuapp.com/import?obj_id='
+  return 'https://mighty-stream-5804.herokuapp.com/city?obj_id='
                           .$obj_id.'&user_id='.$user_id;
 }
 

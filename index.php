@@ -98,7 +98,7 @@ $app_name = idx($app_info, 'name', '');
         ?>
         FB.api('https://graph.facebook.com/me/actionimporter:fly',
                'post',
-               { city: '<?php echo getUrl("/import?user_id=".$user_id."&obj_id=") ?>' + $('#cities').val(), 'fb:explicitly_shared': 1},
+               { city: '<?php echo getUrl("/city?user_id=".$user_id."&obj_id=") ?>' + $('#cities').val(), 'fb:explicitly_shared': 1},
                function (response) {
                  if (response != null) {
                    if (console && console.log) {
