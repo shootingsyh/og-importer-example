@@ -19,6 +19,6 @@ echo(
     array(
       'meta' => array('code'=>200),
       'fly' => $data,
-    )
+    ), JSON_PRETTY_PRINT
   )
 );
