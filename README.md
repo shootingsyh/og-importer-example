@@ -1,11 +1,8 @@
-## OG Action Importer Example
+## OG FBConnected Action Importer Example
 
-This is a simple OAuth example provider and importer endpoint. The user first hits `/oauth/authorize` which redirects to `/oauth/success` when they clik OK. That issues a code which is returned to `/oauth/access_token` which issues an access token to be used with `/import`.
+This is a simple example provider and importer endpoint for FBConnected importer.The app will accept App Secret encoded fbid from facebook and generate feed under /feed. With feed, facebook will import objects under /city.  
 
 # Heroku
 
-This is running live on [http://og-importer-example.herokuapp.com/](http://og-importer-example.herokuapp.com/)
+This is running live on [https://mighty-stream-5804.herokuapp.com/](https://mighty-stream-5804.herokuapp.com/)
 
-If you run it on heroku, it needs the free memcache addon.  You can get it with:
-
-    heroku addons:add memcache:5mb
