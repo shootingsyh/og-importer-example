@@ -19,6 +19,7 @@ echo(
     array(
       'meta' => array('code'=>200),
       'fly' => $data,
+      'walk_to' => $data,
     )
   )
 );
